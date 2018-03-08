@@ -1,0 +1,12 @@
+[Unit]
+Description=The Things Network Gateway
+
+[Service]
+ExecStart=/home/rxhf/packet-forwarder start --reset-pin 7 --config /opt/.pktfwd.yml
+SyslogIdentifier=ttn-gateway-tcp
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
